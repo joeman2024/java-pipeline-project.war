@@ -19,18 +19,4 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Tomcat') {
-            steps {
-                echo 'Deploying the project...'
-        
-                deploy adapters: [tomcat9(credentialsId: 'TomcatKey', path: '', url: 'http://3.133.149.121:8080/manager/html')], contextPath: null, war: '**/*.war'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing the project...'
-                // Add your test steps here
-            }
-        }
-    }
 }
