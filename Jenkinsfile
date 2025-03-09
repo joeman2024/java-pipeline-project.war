@@ -19,5 +19,11 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the project...'
+                sh 'cp **/target/*.war /var/lib/tomcat/webapps/'
+            }
+        }
     }
 }
