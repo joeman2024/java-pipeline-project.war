@@ -19,11 +19,5 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project...'
-                deploy adapters: [tomcat9(credentialsId: 'tomcat-key', path: '', url: 'http://3.131.37.100:8080/')], contextPath: null, war: 'target/*.war'
-            }
-        }
     }
 }
